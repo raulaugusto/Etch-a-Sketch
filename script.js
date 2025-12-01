@@ -46,12 +46,27 @@ function createGrid(size) {
     for (let n = 1; n <= size; n++) {
       const newTile = createTile(i * n, size);
       newTile.addEventListener("mouseover", () => {
-        newTile.classList.add("marked");
+        if (!newTile.classList.contains("marked")) {
+          const rgb = getRandomColor();
+          newTile.style.backgroundColor = rgb;
+          newTile.style.borderColor = rgb;
+          newTile.style.opacity = 0.5;
+          newTile.classList.add("marked");
+        } else {
+          newTile.style.opacity = parseFloat(newTile.style.opacity) + 0.3;
+        }
       });
       row.appendChild(newTile);
     }
     grid.appendChild(row);
   }
+}
+
+function getRandomColor() {
+  const r = parseInt(Math.random() * 255);
+  const g = parseInt(Math.random() * 255);
+  const b = parseInt(Math.random() * 255);
+  return `rgb(${r}, ${g}, ${b})`;
 }
 
 createGrid(16);

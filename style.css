@@ -11,9 +11,5 @@ body {
 }
 
 .tile {
-  border: 1px rgb(88, 88, 88) solid;
-}
-.marked {
-  background-color: black;
-  border: 1px black solid;
+  border: 1px rgb(170, 170, 170) solid;
 }
