@@ -29,7 +29,7 @@ function createNewGrid() {
 }
 
 function createTile(id, size) {
-  const dimension = 600 / size;
+  const dimension = 800 / size;
   console.log(dimension);
   const tile = document.createElement("div");
   tile.classList.add("tile");
